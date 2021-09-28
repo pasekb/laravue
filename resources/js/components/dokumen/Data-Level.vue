@@ -14,7 +14,7 @@
                                          <th>Nama Level</th>
                                          <th>aksi</th>
                                      </tr>
-                                     <tr v-for="item in levelss" :key="item.message">
+                                     <tr v-for="item in levelss" :key="item.id">
                                          <td>{{item.nama_level}}</td>
                                          <td>Edit | hapus</td>
                                      </tr>

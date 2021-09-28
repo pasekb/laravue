@@ -55,6 +55,12 @@
                   <p>Menu Level</p>
                   </router-link>
                 </li>
+                <li class="nav-item">
+                  <router-link to="/data-pengguna" class="nav-link">
+                    <i class="fas fa-layer-group nav-icon"></i>
+                    <p>Menu Level</p>
+                    </router-link>
+                  </li>
             </ul>
           </li>
           <li class="nav-item">
