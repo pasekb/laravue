@@ -6,7 +6,21 @@
                     <div class="card-header">Data levelll</div>
 
                     <div class="card-body">
-                        ini adalah halaman data levelllll folder dokumen
+                        <div class="form-grou">
+                             <div class="table-responsive">
+                                 <table class="table">
+                                     <tr>
+                                         
+                                         <th>Nama Level</th>
+                                         <th>aksi</th>
+                                     </tr>
+                                     <tr v-for="item in levelss" :key="item.message">
+                                         <td>{{item.nama_level}}</td>
+                                         <td>Edit | hapus</td>
+                                     </tr>
+                                 </table>
+                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -16,8 +30,18 @@
 
 <script>
     export default {
-        mounted() {
-            console.log('Component mounted.')
+       data(){
+           return{
+           levelss:{}
+            };
+        },
+        methods:{
+            loadData(){
+                axios.get('http://localhost:8000/api/ambildatalevel').then(({data}) =>(this.levelss = data));    
+            }
+        },
+        created(){
+            this.loadData();
         }
     }
 </script>
