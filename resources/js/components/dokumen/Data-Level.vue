@@ -37,7 +37,9 @@
         },
         methods:{
             loadData(){
+                this.$Progress.start();
                 axios.get('http://localhost:8000/api/ambildatalevel').then(({data}) =>(this.levelss = data));    
+                this.$Progress.finish();
             }
         },
         created(){

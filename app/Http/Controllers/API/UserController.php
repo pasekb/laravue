@@ -15,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        return User::all();
     }
 
     /**
@@ -36,6 +36,10 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        // $this->validate($request,[
+        //     'name' => 'require|string|max:30'
+        // ]);
+        
         return User::create([
             'name' => $request->name,
             'level_id' => $request->level_id,
@@ -75,7 +79,15 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dtPengguna =[
+            'name' =>$request->name,
+            'level_id' =>$request->level_id,
+            'email' =>$request->email,
+            'password' => bcrypt($request->password),
+        ];
+
+        $ubahData=User::findOrFail($id);
+        $ubahData->update($dtPengguna);
     }
 
     /**
@@ -86,6 +98,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $hapus = User::findOrFail($id);
+        $hapus->delete();
     }
 }

@@ -7,8 +7,26 @@ import {Form, HasError, AlertError} from 'vform';
 window.Form  = Form;
 
 
+let Fire = new Vue();
+window.Fire = Fire;
+//sweetalert
+import Swal from 'sweetalert2';
+window.Swal = Swal;
+const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+});
+window.Toast = Toast;
 
-
+//progress bar
+import VueProgressBar from 'vue-progressbar'
+Vue.use(VueProgressBar,{
+    color: 'rgb(143, 255, 199)',
+    failedcolor: 'red',
+    height: '100px'
+})
 
 import Vue from 'vue';
 import VueRouter from 'vue-router'

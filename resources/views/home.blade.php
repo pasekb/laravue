@@ -27,6 +27,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="col-sm-6">
             <h1 class="m-0">Starter Page</h1>
             <router-view></router-view>
+            <vue-progress-bar></vue-progress-bar>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
